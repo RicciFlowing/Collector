@@ -18,6 +18,7 @@
         <td><%= worksheet.klass %></td>
         <td><%= worksheet.subj %></td>
         <td><%= worksheet.description %></td>
+        <td><%=  link_to "Download", worksheet.file.url%></td>
         <td><%= link_to 'Show', worksheet %></td>
         <td><%= link_to 'Edit', edit_worksheet_path(worksheet) %></td>
         <td><%= link_to 'Destroy', worksheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,7 +1,8 @@
 class AddFileToWorksheets < ActiveRecord::Migration
-  def change
-    change_table :worksheets do |t|
-    t.string :file
-    end
+  def up
+    add_column :worksheets, :file, :string
+  end
+  def down
+    remove_column :worksheets, :file
   end
 end
