@@ -24,11 +24,11 @@ RSpec.describe WorksheetsController, type: :controller do
   # Worksheet. As you add validations to Worksheet, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryGirl.attributes_for(:worksheet)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {klass:"Not a number"}
   }
 
   # This should return the minimal set of values that should be in the session
