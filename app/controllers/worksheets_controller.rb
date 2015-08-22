@@ -1,6 +1,11 @@
 class WorksheetsController < ApplicationController
   before_action :set_worksheet, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @worksheets = Worksheet.search params[:search]
+    render :index
+  end
+
   # GET /worksheets
   # GET /worksheets.json
   def index

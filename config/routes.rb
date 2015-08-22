@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :worksheets
+  resources :worksheets do
+    collection do
+    get 'search'
+  end
+  end
   root 'worksheets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
