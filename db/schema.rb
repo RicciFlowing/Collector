@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819122426) do
+ActiveRecord::Schema.define(version: 20150822132758) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "worksheets", force: :cascade do |t|
     t.integer  "klass"
@@ -24,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150819122426) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.string   "file"
+    t.text     "content"
   end
 
 end
