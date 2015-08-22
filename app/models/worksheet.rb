@@ -6,6 +6,8 @@ class Worksheet < ActiveRecord::Base
 
   def set_content
     data = File.read self.file.path
-    self.content = Yomu.read :text, data
+    text = Yomu.read :text, data
+    text.gsub!(/\s\s+/, ' ')
+    self.content = text
   end
 end
