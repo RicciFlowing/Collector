@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
+<% if alert %>
+<div class="alert alert-danger" role="alert" id:"alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  <%= alert %>
+</div>
+<%end%>
 
 <h1>Listing Worksheets</h1>
 

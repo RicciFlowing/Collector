@@ -3,7 +3,12 @@ class WorksheetsController < ApplicationController
 
   def search
     @worksheets = Worksheet.search params[:search]
-    render :index
+    if @worksheets.empty?
+      flash[:alert] = "The search for #{params[:search]} returned no match. Here are all worksheets."
+      redirect_to worksheets_url
+    else
+      render :index
+    end
   end
 
   # GET /worksheets
