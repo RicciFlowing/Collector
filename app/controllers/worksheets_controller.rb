@@ -35,7 +35,9 @@ class WorksheetsController < ApplicationController
   # POST /worksheets.json
   def create
     @worksheet = Worksheet.new(worksheet_params)
-    @worksheet.set_content
+    if worksheet_params[:file]
+      @worksheet.set_content
+    end
     respond_to do |format|
       if @worksheet.save
         format.html { redirect_to @worksheet, notice: 'Worksheet was successfully created.' }
