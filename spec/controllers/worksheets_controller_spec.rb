@@ -70,18 +70,21 @@ RSpec.describe WorksheetsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Worksheet" do
+        expect_any_instance_of(Worksheet).to receive(:set_content)
         expect {
           post :create, {:worksheet => valid_attributes}, valid_session
         }.to change(Worksheet, :count).by(1)
       end
 
       it "assigns a newly created worksheet as @worksheet" do
+        expect_any_instance_of(Worksheet).to receive(:set_content)
         post :create, {:worksheet => valid_attributes}, valid_session
         expect(assigns(:worksheet)).to be_a(Worksheet)
         expect(assigns(:worksheet)).to be_persisted
       end
 
       it "redirects to the created worksheet" do
+        expect_any_instance_of(Worksheet).to receive(:set_content)
         post :create, {:worksheet => valid_attributes}, valid_session
         expect(response).to redirect_to(Worksheet.last)
       end
