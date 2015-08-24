@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822132758) do
+ActiveRecord::Schema.define(version: 20150824190932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "worksheets", force: :cascade do |t|
     t.integer  "klass"
@@ -28,6 +33,9 @@ ActiveRecord::Schema.define(version: 20150822132758) do
     t.datetime "file_updated_at"
     t.string   "file"
     t.text     "content"
+    t.integer  "category_id"
   end
+
+  add_index "worksheets", ["category_id"], name: "index_worksheets_on_category_id", using: :btree
 
 end

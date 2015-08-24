@@ -1,6 +1,8 @@
 require 'yomu'
 
 class Worksheet < ActiveRecord::Base
+  belongs_to :category
+
   include PgSearch
 
   mount_uploader :file, FileUploader
