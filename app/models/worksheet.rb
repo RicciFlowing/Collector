@@ -2,11 +2,11 @@ require 'yomu'
 
 class Worksheet < ActiveRecord::Base
   belongs_to :category
-
-  include PgSearch
+  validates_presence_of :category_id
+  validates_numericality_of :klass
 
   mount_uploader :file, FileUploader
-  validates_numericality_of :klass
+
 
   def set_content
     data = File.read self.file.path
@@ -14,6 +14,8 @@ class Worksheet < ActiveRecord::Base
     text.gsub!(/\s\s+/, ' ')
     self.content = text
   end
+
+  include PgSearch
 
   pg_search_scope(
     :search,

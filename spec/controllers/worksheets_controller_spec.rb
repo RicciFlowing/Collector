@@ -23,8 +23,10 @@ RSpec.describe WorksheetsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Worksheet. As you add validations to Worksheet, be sure to
   # adjust the attributes here as well.
+  category = FactoryGirl.create(:category)
+
   let(:valid_attributes) {
-    FactoryGirl.attributes_for(:worksheet)
+    FactoryGirl.attributes_for(:worksheet).merge({:category_id => category.id})
   }
 
   let(:invalid_attributes) {
