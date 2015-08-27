@@ -5,5 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-categories = Category.create([{name: "geometry"},{name: "arithmetic"}, {name: "analysis"}, {name: "stochastic" }, {name:"alebgra"}]);
+math = Schoolsubject.create name: "Mathematics"
+science =  Schoolsubject.create name: "Science"
+categories = Category.create([{name: "geometry", schoolsubject: math},
+                              {name: "arithmetic", schoolsubject: math},
+                              {name: "analysis", schoolsubject: math},
+                              {name: "stochastic" , schoolsubject: math},
+                              {name:"alebgra", schoolsubject: math}])

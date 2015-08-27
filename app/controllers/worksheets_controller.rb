@@ -81,6 +81,6 @@ class WorksheetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worksheet_params
-      params.require(:worksheet).permit(:klass, :subj, :description, :file, :category_id)
+      params.require(:worksheet).permit(:klass, :description, :file, :category_id)
     end
 end

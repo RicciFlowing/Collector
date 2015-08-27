@@ -15,7 +15,7 @@
   <thead>
     <tr>
       <th>Grade</th>
-      <th>Subj</th>
+      <th>Subject</th>
       <th>Category</th>
       <th>Description</th>
       <th colspan="3"></th>
@@ -26,7 +26,7 @@
     <% @worksheets.each do |worksheet| %>
       <tr>
         <td><%= worksheet.klass %></td>
-        <td><%= worksheet.subj %></td>
+        <td><%= worksheet.category.schoolsubject.name %></td>
         <td><%= worksheet.category.name %></td>
         <td><%= worksheet.description %></td>
         <td><%=  link_to "Download", worksheet.file.url, class:"btn btn-default"%></td>
