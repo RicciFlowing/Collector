@@ -15,6 +15,9 @@ class WorksheetsController < ApplicationController
   # GET /worksheets.json
   def index
     @worksheets = Worksheet.all
+    respond_to do |format|
+       format.json { render json: @worksheets.as_json(include: [:category]) }
+    end
   end
 
   # GET /worksheets/1
