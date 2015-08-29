@@ -25,7 +25,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-
+      .when('/worksheets', {
+        templateUrl: 'views/worksheets/index.html',
+        controller: 'WorksheetCtrl',
+        controllerAs: 'worksheet_controller'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
