@@ -14,7 +14,7 @@
   <tbody>
       <tr ng-repeat= "worksheet in worksheets">
         <td> {{ worksheet.klass }} </td>
-        <td> {{ worksheet.category.schoolsubject.name }} </td>
+        <td> {{ worksheet.category.subject }} </td>
         <td>{{worksheet.category.name }} </td>
         <td>{{ worksheet.description }}</td>
         <td><a ng-href = "http://{{worksheet.file.url}}" class= "btn btn-default">Download</a></td>

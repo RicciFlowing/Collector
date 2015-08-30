@@ -27,7 +27,12 @@ angular
       })
       .when('/worksheets', {
         templateUrl: 'views/worksheets/index.html',
-        controller: 'WorksheetCtrl',
+        controller: 'WorksheetIndexCtrl',
+        controllerAs: 'worksheet_controller'
+      })
+      .when('/worksheets/new', {
+        templateUrl: 'views/worksheets/new.html',
+        controller: 'WorksheetCreateCtrl',
         controllerAs: 'worksheet_controller'
       })
       .when('/about', {
