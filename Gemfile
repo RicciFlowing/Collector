@@ -42,6 +42,8 @@ gem 'pg'
 
 gem 'pg_search'
 
+gem 'active_model_serializers'
+
 
 
 group :development, :test do
