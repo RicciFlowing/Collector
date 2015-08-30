@@ -1,5 +1,7 @@
 <h1>Listing Worksheets</h1>
 
+<input type="text" class="form-control"  value="" ng-model="search.$">
+
 <table class="table">
   <thead>
     <tr>
@@ -12,7 +14,7 @@
   </thead>
 
   <tbody>
-      <tr ng-repeat= "worksheet in worksheets">
+      <tr ng-repeat= "worksheet in worksheets | filter: search">
         <td> {{ worksheet.klass }} </td>
         <td> {{ worksheet.category.subject }} </td>
         <td>{{worksheet.category.name }} </td>
@@ -21,5 +23,5 @@
       </tr>
   </tbody>
 </table>
-
+<a href="#/worksheets/new" class="btn btn-default">Add a worksheet</a>
 <br>
