@@ -1,13 +1,20 @@
-<h1>Listing Worksheets</h1>
+<h1>Worksheets</h1>
 
-<input type="text" class="form-control"  value="" ng-model="search.$">
 <div class="row">
-  <div class="col-md-3">
+  <div class="filter col-md-3">
+    <label for="search"> Search:</label>
+    <input type="text" class="form-control"  value="" ng-model="search.$">
     <div class="subject form-group">
       <div ng-repeat="subject in subjects" class="radio">
         <label>
-        <input ng-model= "$parent.filter_subject" type="radio" class= "form-control" name="subjectsRadio" ng-value="subject">
+        <input ng-model= "$parent.filter_criteria.subject" type="radio" name="subjectsRadio" ng-value="subject">
           {{subject}}
+        </label> <br/>
+      </div>
+      <div ng-repeat="category in categories | filter: {subject: filter_criteria.subject}" class="checkbox">
+        <label>
+        <input checklist-model= "$parent.filter_criteria.categories" type="checkbox" name="categoryCheckbox" checklist-value="category">
+          {{category.name}}
         </label> <br/>
       </div>
     </div>
@@ -25,7 +32,7 @@
       </thead>
 
       <tbody>
-          <tr ng-repeat= "worksheet in filtered_worksheets() | filter: search">
+          <tr ng-repeat= "worksheet in worksheets | worksheetFilter: filter_criteria">
             <td> {{ worksheet.klass }} </td>
             <td> {{ worksheet.category.subject }} </td>
             <td>{{worksheet.category.name }} </td>
@@ -34,8 +41,7 @@
           </tr>
       </tbody>
     </table>
+    <a href="#/worksheets/new" class="btn btn-default">Add a worksheet</a>
   </div>
 </div>
-
-<a href="#/worksheets/new" class="btn btn-default">Add a worksheet</a>
 <br>

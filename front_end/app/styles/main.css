@@ -1,3 +1,11 @@
+.filter {
+  border: solid;
+  border-color: #DADADA;
+  border-radius: 10px;
+
+}
+
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
