@@ -32,7 +32,7 @@
       </thead>
 
       <tbody>
-          <tr ng-repeat= "worksheet in worksheets | worksheetFilter: filter_criteria">
+          <tr ng-repeat= "worksheet in worksheets | worksheetFilter: filter_criteria | filter: search">
             <td> {{ worksheet.klass }} </td>
             <td> {{ worksheet.category.subject }} </td>
             <td>{{worksheet.category.name }} </td>
