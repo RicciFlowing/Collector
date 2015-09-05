@@ -17,7 +17,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'checklist-model'
+    'checklist-model',
+    'ngFileUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
