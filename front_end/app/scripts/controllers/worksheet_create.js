@@ -23,7 +23,10 @@ angular.module('collectorApp')
         });
    };
 
-    $scope.submit = function(){
+    $scope.submit = function(form){
+      if(form.$invalid){
+        return false;
+      }
       var worksheet = {
                         file: $scope.file,
                         category: $scope.category,
