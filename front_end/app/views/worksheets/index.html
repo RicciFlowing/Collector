@@ -1,8 +1,16 @@
 <h1>Worksheets</h1>
+<div class="input-group">
+  <span class="input-group-btn">
+    <button class="btn btn-default" ng-click="full_content_search()" type="button">Go!</button>
+  </span>
+  <input type="text" class="form-control" ng-model="full_search" placeholder="Search for...">
+</div>
+<br>
+
 
 <div class="row">
   <div class="filter col-md-3">
-    <label for="search"> Search:</label>
+    <label for="search"> Quick search:</label>
     <input type="text" class="form-control"  value="" ng-model="search.$">
     <div class="subject form-group">
       <div ng-repeat="subject in subjects" class="radio">
@@ -41,8 +49,7 @@
           </tr>
       </tbody>
     </table>
-    <a href="#/worksheets/new" class="btn btn-default">Add a worksheet</a>
+    <a href="#/worksheets/new" class="btn btn-default"> Add a worksheet</a>
   </div>
 </div>
 <br>
-ng-flow#~

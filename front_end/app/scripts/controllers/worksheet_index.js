@@ -27,4 +27,10 @@ angular.module('collectorApp')
   $scope.subjects = ["Math", "Science"];
 
   $scope.filter_criteria = {categories: []};
+
+  $scope.full_content_search = function(){
+    //Make a call to /worksheets/search
+    console.log("Searching the server");
+    //Iverwrite $scope.worksheets with results if any
+  }
 });
