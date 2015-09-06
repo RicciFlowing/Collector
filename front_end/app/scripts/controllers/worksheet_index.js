@@ -27,6 +27,9 @@ angular.module('collectorApp')
   ];
   $scope.categories = [{name:"Arihtmetic", subject:"Math" }, {name:"Geometry", subject:"Math" } ,{name:"Light", subject:"Science" }];
   $scope.subjects = ["Math", "Science"];
+  $scope.grades = [5,6,7,8,9,10,11,12];
+
+
   $scope.filter_criteria = {categories: []};
   $scope.filter_criteria.grades = "5;12";
   $scope.options = {
@@ -36,7 +39,7 @@ angular.module('collectorApp')
         scale: [5,6,7,8,9,10,11,12],
         vertical: false
       };
-  $scope.grades = [5,6,7,8,9,10,11,12];
+
 
 
 
