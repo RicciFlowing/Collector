@@ -1,9 +1,13 @@
+
 .filter {
   border: solid;
   border-color: #DADADA;
   border-radius: 10px;
 
 }
+
+.grades { height: 200px; }
+
 
 
 .browsehappy {
@@ -70,7 +74,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    /*max-width: 730px; */
   }
 
   /* Remove the padding we set earlier */

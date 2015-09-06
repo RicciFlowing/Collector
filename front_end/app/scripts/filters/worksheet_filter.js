@@ -27,10 +27,26 @@ angular.module('collectorApp')
     }
     };
 
+   function split_grade_bounds(grades){
+      var bounds = grades.split(';');
+      bounds.map(function(bound){parseInt(bound);});
+      return bounds;
+   }
+
+   function right_grade(worksheet, lower_bound, upper_bound){
+     if((lower_bound <= worksheet.grade)&&(worksheet.grade <= upper_bound )){
+       return true;
+     } else {
+       return false;
+     }
+   }
+
    return function(worksheets, criteria){
      var out = [];
+     var bounds = [];
+     bounds = split_grade_bounds(criteria.grades);
      worksheets.forEach(function(worksheet){
-       if (right_category(worksheet, criteria.categories) && right_subject(worksheet, criteria.subject))
+       if (right_category(worksheet, criteria.categories) && right_subject(worksheet, criteria.subject)&& right_grade(worksheet,bounds[0],bounds[1]))
         {
         out.push(worksheet);
       }

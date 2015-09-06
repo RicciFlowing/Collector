@@ -18,7 +18,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'checklist-model',
-    'ngFileUpload'
+    'ngFileUpload',
+    'angularAwesomeSlider'
   ])
   .config(function ($routeProvider) {
     $routeProvider
