@@ -14,13 +14,15 @@ angular.module('collectorApp')
       file: {url: "example.com"},
       grade: 7,
       description: "A nice description",
-      category: {name:"Arihtmetic", subject:"Math" }
+      category: {name:"Arihtmetic", subject:"Math" },
+      tags: [{name: "test"}]
     },
     {
       file: {url: "example.com"},
       grade: 8,
       description: "A nice description",
-      category: {name:"Geometry", subject:"Math" }
+      category: {name:"Geometry", subject:"Math" },
+      tags: [{name: "another_tag"}]
     }
   ];
   $scope.categories = [{name:"Arihtmetic", subject:"Math" }, {name:"Geometry", subject:"Math" } ,{name:"Light", subject:"Science" }];

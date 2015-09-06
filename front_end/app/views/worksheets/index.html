@@ -58,7 +58,7 @@
             <td> {{ worksheet.grade }} </td>
             <td> {{ worksheet.category.subject }} </td>
             <td>{{worksheet.category.name }} </td>
-            <td>{{ worksheet.description }}</td>
+            <td>{{ worksheet.description }} <span ng-repeat="tag in worksheet.tags" class="label label-primary">{{tag.name}}</span></td>
             <td><a ng-href = "http://{{worksheet.file.url}}" class= "btn btn-default">Download</a></td>
           </tr>
       </tbody>
