@@ -41,7 +41,12 @@ angular.module('collectorApp')
         vertical: false
       };
 
-
+  $scope.delete = function(worksheet){
+    var index = $scope.worksheets.indexOf(worksheet);
+    if(index >=0){
+      $scope.worksheets.splice(index, 1);
+    }
+  }
 
 
   $scope.full_content_search = function(){
