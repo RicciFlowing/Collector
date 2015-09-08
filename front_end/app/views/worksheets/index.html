@@ -38,6 +38,14 @@
             <input ng-model="filter_criteria.grades"  type="text" id="mySlider1" slider options="options" />
   <br/>
       </div>
+
+      <div ng-repeat="tag in tags" class="checkbox">
+        <label>
+        <input checklist-model= "$parent.filter_criteria.tags" type="checkbox" name="tagCheckbox" checklist-value="tag">
+          {{tag.name}}
+        </label> <br/>
+      </div>
+
     </div>
   </div>
 

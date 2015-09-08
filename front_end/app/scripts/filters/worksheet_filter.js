@@ -2,7 +2,7 @@
 
 angular.module('collectorApp')
  .filter('worksheetFilter', function($filter){
-   function compare(worksheet, category){
+   function compare_with_category(worksheet, category){
      return worksheet.category.name === category.name;
    }
 
@@ -13,7 +13,7 @@ angular.module('collectorApp')
      }
      var temp = false
      categories.forEach(function(category){
-       if(compare(worksheet, category)){ temp=true;}
+       if(compare_with_category(worksheet, category)){ temp=true;}
      });
       return temp;
    };
@@ -41,12 +41,39 @@ angular.module('collectorApp')
      }
    }
 
+   function compare_with_tag(worksheet, tag){
+     var result = false;
+     worksheet.tags.forEach(function(worksheet_tag){
+       if(worksheet_tag.name === tag.name){
+         result = true;
+       }
+     });
+     return result;
+   }
+
+   function right_tags(worksheet, tags){
+     if(tags.length == 0){
+       return true;
+       }
+
+     var result = false;
+     tags.forEach(function(tag){
+       if(compare_with_tag(worksheet, tag)){
+         result = true ;
+        }
+     });
+     return result;
+   }
+
    return function(worksheets, criteria){
      var out = [];
      var bounds = [];
      bounds = split_grade_bounds(criteria.grades);
      worksheets.forEach(function(worksheet){
-       if (right_category(worksheet, criteria.categories) && right_subject(worksheet, criteria.subject)&& right_grade(worksheet,bounds[0],bounds[1]))
+       if (right_category(worksheet, criteria.categories)
+       && right_subject(worksheet, criteria.subject)
+       && right_grade(worksheet,bounds[0],bounds[1])
+       && right_tags(worksheet,criteria.tags))
         {
         out.push(worksheet);
       }
