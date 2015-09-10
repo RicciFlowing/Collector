@@ -1,0 +1,19 @@
+<div class="widget"> <!-- TYPE PANEL -->
+  <div class="widget-head"> <!-- HEAD PANEL -->
+    <h4 class="heading"><i class="fa fa-briefcase"></i>  {{ worksheet.grade }}  - {{ worksheet.category.subject }} - {{worksheet.category.name }}</h4>
+    <a ng-href = "http://{{worksheet.file.url}}" class= "pull-right"> <i class= "fa fa-download"> </i>Download</a>
+
+  </div><!-- /HEAD PANEL -->
+
+  <div class="widget-body" id="widget-body1"> <!-- CONTENT PANEL -->
+    <h4>  {{ worksheet.description }} </h4>
+  </div><!-- /CONTENT PANEL -->
+
+  <div class="widget-footer"><!-- FOOTER PANEL-->
+    <span ng-repeat="tag in worksheet.tags" class="label label-primary">{{tag.name}}</span></td>
+    <a href="#/worksheets" class="fa fa-minus-circle fa-1x" ng-click="delete(worksheet)" data-toggle="tooltip" data-placement="right" title="" data-original-title="Delete"><i></i></a>
+    <a href="#/worksheets" class="fa fa-pencil fa-1x" data-toggle="tooltip" data-placement="right" title="" data-original-title="Edit"><i></i></a>
+    <a href="#/worksheets" id="toggle1" class="fa fa-chevron-up fa-1x" data-toggle="tooltip" data-placement="right" title="" data-original-title="Hide/Show details"><i></i></a>
+  </div><!-- /FOOTER PANEL-->
+
+</div> <!-- /TYPE PANEL -->
