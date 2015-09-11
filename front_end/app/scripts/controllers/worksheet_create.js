@@ -37,6 +37,7 @@ angular.module('collectorApp')
         return false;
       }
       var worksheet = {
+                        topic: $scope.topic,
                         file: $scope.files,
                         category: $scope.category,
                         description: $scope.description,

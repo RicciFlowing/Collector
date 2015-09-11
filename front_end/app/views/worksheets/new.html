@@ -1,5 +1,10 @@
 <form name="worksheet_form">
 
+  <div class="form-group">
+    <label for="topic"> Topic</label>
+    <input class="form-control" name="topic" ng-model="topic" placeholder="Topic" required/>
+  </div>
+
 <div class="form-group">
   <label for="subject"> Subject</label>
   <select class="form-control" name="subject" ng-model="subject" required>
@@ -16,7 +21,7 @@
 
 <div class="form-group">
   <label for="grade"> Grade</label>
-  <input type="number" ng-model="grade" name="grade" class="form-control" required value="5"></input>
+  <input type="number" ng-model="grade" name="grade" class="form-control" required ng-value="5"></input>
 </div>
 
 <div class="btn btn-default" ngf-select ng-model="files" ngf-multiple="true">Select file(s)</div>

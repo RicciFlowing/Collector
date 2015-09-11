@@ -11,6 +11,7 @@ angular.module('collectorApp')
 .controller('WorksheetIndexCtrl', function ($scope, Worksheet) {
   $scope.worksheets = [
     {
+      topic: "A important topic",
       file: {url: "example.com"},
       grade: 7,
       description: "A nice description",
@@ -18,6 +19,7 @@ angular.module('collectorApp')
       tags: [{name: "Worksheet"}]
     },
     {
+      topic: "Anpther very important topic",
       file: {url: "example.com"},
       grade: 8,
       description: "A nice description",

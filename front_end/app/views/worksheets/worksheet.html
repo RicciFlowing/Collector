@@ -1,11 +1,19 @@
 <div class="widget"> <!-- TYPE PANEL -->
   <div class="widget-head"> <!-- HEAD PANEL -->
-    <h4 class="heading"><i class="fa fa-briefcase"></i>  {{ worksheet.grade }}  - {{ worksheet.category.subject }} - {{worksheet.category.name }}</h4>
+    <h4 class="heading"><i class="fa fa-file"></i>
+      {{ worksheet.grade }}  - {{ worksheet.category.subject }} - {{worksheet.category.name }}
+      </h4>
+      <h3 class="heading">
+        <b> {{worksheet.topic}}</b>
+      </h3>
+
     <a ng-href = "http://{{worksheet.file.url}}" class= "pull-right"> <i class= "fa fa-download"> </i> Download</a>
 
   </div><!-- /HEAD PANEL -->
 
   <div class="widget-body" id="widget-body1"> <!-- CONTENT PANEL -->
+
+
     <h4>  {{ worksheet.description }} </h4>
   </div><!-- /CONTENT PANEL -->
 
