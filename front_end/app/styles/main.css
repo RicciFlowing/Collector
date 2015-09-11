@@ -3,6 +3,9 @@
   margin-right: 0px;
 }
 
+.searchform {
+  margin-left: -15px;
+}
 
 .filter {
   border: solid;
