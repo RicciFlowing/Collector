@@ -12,12 +12,21 @@
   <p>
     Categories:
   </p>
-  <div ng-repeat="category in categories | filter: {subject: criteria.subject}" class="checkbox">
+  <div ng-if="criteria.subject=='All'" ng-repeat="category in categories" class="checkbox">
     <label>
     <input checklist-model= "$parent.criteria.categories" type="checkbox" name="categoryCheckbox" checklist-value="category">
       {{category.name}}
     </label> <br/>
   </div>
+
+  <div ng-if="criteria.subject!='All'" ng-repeat="category in categories | filter: {subject: criteria.subject}" class="checkbox">
+    <label>
+    <input checklist-model= "$parent.criteria.categories" type="checkbox" name="categoryCheckbox" checklist-value="category">
+      {{category.name}}
+    </label> <br/>
+  </div>
+
+
 
   <p>
     Grades:

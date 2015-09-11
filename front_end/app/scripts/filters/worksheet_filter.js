@@ -19,7 +19,7 @@ angular.module('collectorApp')
    };
 
    function right_subject(worksheet, subject){
-    if(!subject || (worksheet.category.subject === subject)){
+    if(!subject || (worksheet.category.subject === subject) || (subject=="All")){
       return true;
     }
     else {
