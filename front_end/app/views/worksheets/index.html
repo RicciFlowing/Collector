@@ -10,43 +10,7 @@
 <div class="row">
   <div class="filter col-md-3">
 
-    <label for="search"> Quick search:</label>
-    <input type="text" class="form-control"  value="" ng-model="search.$">
-
-    <div class="subject form-group">
-      <div ng-repeat="subject in subjects" class="radio">
-        <label>
-        <input ng-model= "$parent.filter_criteria.subject" type="radio" name="subjectsRadio" ng-value="subject">
-          {{subject}}
-        </label> <br/>
-      </div>
-
-      <p>
-        Categories:
-      </p>
-      <div ng-repeat="category in categories | filter: {subject: filter_criteria.subject}" class="checkbox">
-        <label>
-        <input checklist-model= "$parent.filter_criteria.categories" type="checkbox" name="categoryCheckbox" checklist-value="category">
-          {{category.name}}
-        </label> <br/>
-      </div>
-
-      <p>
-        Grades:
-      </p>
-      <div class="grades">
-            <input ng-model="filter_criteria.grades"  type="text" id="mySlider1" slider options="options" />
-  <br/>
-      </div>
-
-      <div ng-repeat="tag in tags" class="checkbox">
-        <label>
-        <input checklist-model= "$parent.filter_criteria.tags" type="checkbox" name="tagCheckbox" checklist-value="tag">
-          {{tag.name}}
-        </label> <br/>
-      </div>
-
-    </div>
+  <filter-box criteria="filter_criteria"></filter-box>
   </div>
 
   <div class="col-md-9">

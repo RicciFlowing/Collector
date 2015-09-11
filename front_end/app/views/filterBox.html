@@ -1,0 +1,37 @@
+<label for="search"> Quick search:</label>
+<input type="text" class="form-control"  value="" ng-model="search.$">
+
+<div class="subject form-group">
+  <div ng-repeat="subject in subjects" class="radio">
+    <label>
+    <input ng-model= "$parent.criteria.subject" type="radio" name="subjectsRadio" ng-value="subject">
+      {{subject}}
+    </label> <br/>
+  </div>
+
+  <p>
+    Categories:
+  </p>
+  <div ng-repeat="category in categories | filter: {subject: criteria.subject}" class="checkbox">
+    <label>
+    <input checklist-model= "$parent.criteria.categories" type="checkbox" name="categoryCheckbox" checklist-value="category">
+      {{category.name}}
+    </label> <br/>
+  </div>
+
+  <p>
+    Grades:
+  </p>
+  <div class="grades">
+        <input ng-model="criteria.grades"  type="text" id="mySlider1" slider options="options" />
+        <br/>
+  </div>
+
+  <div ng-repeat="tag in tags" class="checkbox">
+    <label>
+    <input checklist-model= "$parent.criteria.tags" type="checkbox" name="tagCheckbox" checklist-value="tag">
+      {{tag.name}}
+    </label> <br/>
+  </div>
+
+</div>

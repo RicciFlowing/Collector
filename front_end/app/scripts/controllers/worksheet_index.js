@@ -16,15 +16,9 @@ angular.module('collectorApp')
   $scope.tags = [{name: "Test"},{name:"Worksheet"}, {name: "Test with solution"}];
 
 
-  $scope.filter_criteria = {categories: [], tags:[]};
-  $scope.filter_criteria.grades = "5;12";
-  $scope.options = {
-        from: 5,
-        to: 12,
-        step: 1,
-        scale: [5,6,7,8,9,10,11,12],
-        vertical: false
-      };
+  $scope.filter_criteria = {categories: [], tags:[], grades: "5;12"};
+
+
 
   $scope.delete = function(worksheet){
     var index = $scope.worksheets.indexOf(worksheet);
