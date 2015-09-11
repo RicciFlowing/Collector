@@ -9,25 +9,8 @@
 */
 angular.module('collectorApp')
 .controller('WorksheetIndexCtrl', function ($scope, Worksheet) {
-  $scope.worksheets = [
-    {
-      topic: "A important topic",
-      file: {url: "example.com"},
-      grade: 7,
-      description: "A nice description",
-      category: {name:"Arihtmetic", subject:"Math" },
-      tags: [{name: "Worksheet"}]
-    },
-    {
-      topic: "Anpther very important topic",
-      file: {url: "example.com"},
-      grade: 8,
-      description: "A nice description",
-      category: {name:"Geometry", subject:"Math" },
-      tags: [{name: "Test"}]
-    }
-  ];
-  $scope.categories = [{name:"Arihtmetic", subject:"Math" }, {name:"Geometry", subject:"Math" } ,{name:"Light", subject:"Science" }];
+  $scope.worksheets = Worksheet.query();
+  $scope.categories = [{name:"Arihtmetic", subject:"Math" }, {name:"Geometry", subject:"Math" } ,{name:"Light", subject:"Science" }, {name:"Mechanics", subject:"Science" }];
   $scope.subjects = ["Math", "Science"];
   $scope.grades = [5,6,7,8,9,10,11,12];
   $scope.tags = [{name: "Test"},{name:"Worksheet"}, {name: "Test with solution"}];
