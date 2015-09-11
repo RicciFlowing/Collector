@@ -10,15 +10,8 @@
 angular.module('collectorApp')
 .controller('WorksheetIndexCtrl', function ($scope, Worksheet) {
   $scope.worksheets = Worksheet.query();
-  $scope.categories = [{name:"Arihtmetic", subject:"Math" }, {name:"Geometry", subject:"Math" } ,{name:"Light", subject:"Science" }, {name:"Mechanics", subject:"Science" }];
-  $scope.subjects = ["Math", "Science"];
-  $scope.grades = [5,6,7,8,9,10,11,12];
-  $scope.tags = [{name: "Test"},{name:"Worksheet"}, {name: "Test with solution"}];
-
 
   $scope.filter_criteria = {categories: [], tags:[], grades: "5;12"};
-
-
 
   $scope.delete = function(worksheet){
     var index = $scope.worksheets.indexOf(worksheet);
@@ -27,10 +20,9 @@ angular.module('collectorApp')
     }
   }
 
-
   $scope.full_content_search = function(){
     //Make a call to /worksheets/search
     console.log("Searching the server");
-    //Iverwrite $scope.worksheets with results if any
+    //overwrite $scope.worksheets with results if any
   }
 });
