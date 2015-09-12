@@ -18,11 +18,11 @@ angular.module('collectorApp')
     if(index >=0){
       $scope.worksheets.splice(index, 1);
     }
-  }
+  };
 
   $scope.full_content_search = function(){
     //Make a call to /worksheets/search
     console.log("Searching the server");
     //overwrite $scope.worksheets with results if any
-  }
+  };
 });
