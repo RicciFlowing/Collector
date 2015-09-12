@@ -15,7 +15,7 @@
 
   <div class="col-md-9">
 
-          <div ng-repeat= "worksheet in worksheets | worksheetFilter: filter_criteria | filter: search" class="row worksheets">
+          <div ng-repeat= "worksheet in filtered_worksheets | filter: search" class="row worksheets">
             <worksheet worksheet="worksheet" delete="delete(worksheet)"></worksheet>
           </div>
           <a href="#/worksheets/new" class="btn btn-default worksheets">  <span class="glyphicon glyphicon-plus"></span>Add a worksheet</a>

@@ -8,10 +8,12 @@
 * Controller of the collectorApp
 */
 angular.module('collectorApp')
-.controller('WorksheetIndexCtrl', function ($scope, Worksheet) {
-  $scope.worksheets = Worksheet.query();
+.controller('WorksheetIndexCtrl', function ($scope,$filter, Worksheet) {
+  var worksheet_min_count = 2;
 
+  $scope.worksheets = Worksheet.query();
   $scope.filter_criteria = {categories: [], tags:[], grades: "5;12"};
+
 
   $scope.delete = function(worksheet){
     var index = $scope.worksheets.indexOf(worksheet);
@@ -25,4 +27,12 @@ angular.module('collectorApp')
     console.log("Searching the server");
     //overwrite $scope.worksheets with results if any
   };
+
+  $scope.$watch('filter_criteria', function(newValue,oldValue){
+    $scope.filtered_worksheets =  $filter("worksheetFilter")($scope.worksheets, $scope.filter_criteria);
+    if($scope.filtered_worksheets.length < worksheet_min_count){
+      console.log("Delay and optionally call server for more worksheets");
+    }
+  }, true);
+
 });
