@@ -38,6 +38,11 @@ angular
         controller: 'WorksheetCreateCtrl',
         controllerAs: 'worksheet_controller'
       })
+      .when('/worksheets/edit/:id', {
+        templateUrl: 'views/worksheets/new.html',
+        controller: 'WorksheetEditCtrl',
+        controllerAs: 'worksheet_controller'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',

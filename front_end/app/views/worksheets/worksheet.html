@@ -20,7 +20,7 @@
   <div class="widget-footer"><!-- FOOTER PANEL-->
     <span ng-repeat="tag in worksheet.tags" class="label label-primary">{{tag.name}}</span></td>
     <a href="#/worksheets" class="fa fa-minus-circle fa-1x" ng-click="delete(worksheet)" data-toggle="tooltip" data-placement="right" title="" data-original-title="Delete"><i></i></a>
-    <a href="#/worksheets" class="fa fa-pencil fa-1x" data-toggle="tooltip" data-placement="right" title="" data-original-title="Edit"><i></i></a>
+    <a ng-href="#/worksheets/edit/{{worksheet.id}}" class="fa fa-pencil fa-1x" data-toggle="tooltip" data-placement="right" title="" data-original-title="Edit"><i></i></a>
     <a href="#/worksheets" id="toggle1" class="fa fa-chevron-up fa-1x" data-toggle="tooltip" data-placement="right" title="" data-original-title="Hide/Show details"><i></i></a>
   </div><!-- /FOOTER PANEL-->
 

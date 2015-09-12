@@ -6,6 +6,7 @@ angular.module('collectorApp')
 
     var worksheets = [
       {
+        id: 1,
         topic: "A important topic",
         file: {url: "example.com"},
         grade: 7,
@@ -14,6 +15,7 @@ angular.module('collectorApp')
         tags: [{name: "Worksheet"}]
       },
       {
+        id: 2,
         topic: "Another very important topic",
         file: {url: "example.com"},
         grade: 8,
@@ -22,6 +24,7 @@ angular.module('collectorApp')
         tags: [{name: "Test"}]
       },
       {
+        id: 3,
         topic: "Very important science topic",
         file: {url: "example.com"},
         grade: 11,
@@ -30,6 +33,7 @@ angular.module('collectorApp')
         tags: [{name: "Test with solution"}]
       },
       {
+        id: 4,
         topic: "Next science topic",
         file: {url: "example.com"},
         grade: 5,
