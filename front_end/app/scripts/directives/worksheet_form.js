@@ -13,17 +13,6 @@ angular.module('collectorApp').directive('worksheetForm', function(){
         }
         return file;
       };
-
-      $scope.upload = function (files) {
-        /*
-        Upload.upload({
-          url: 'server/upload/url',
-          method: 'POST',
-          fields: { 'worksheet[name]': $scope.name },
-          file: files,
-          fileFormDataName: 'worksheet[file]'});
-          */
-     };
     }
   };
 });

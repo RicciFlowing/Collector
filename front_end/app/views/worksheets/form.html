@@ -2,29 +2,29 @@
 
   <div class="form-group">
     <label for="topic"> Topic</label>
-    <input class="form-control" name="topic" ng-model="topic" placeholder="Topic" required/>
+    <input class="form-control" name="topic" ng-model="worksheet.topic" placeholder="Topic" required/>
   </div>
 
 <div class="form-group">
   <label for="subject"> Subject</label>
-  <select class="form-control" name="subject" ng-model="subject" required>
+  <select class="form-control" name="subject" ng-model="worksheet.subject" required>
     <option ng-repeat="subject in subjects" value={{subject}}> {{subject}}</option>
   </select>
 </div>
 
 <div class="form-group">
   <label for="category"> Category</label>
-  <select class="form-control" name="category" ng-model="category" required>
+  <select class="form-control" name="category" ng-model="worksheet.category" required>
     <option ng-repeat="category in categories | filter:{subject: subject}" value={{category}}> {{category.name}}</option>
   </select>
 </div>
 
 <div class="form-group">
   <label for="grade"> Grade</label>
-  <input type="number" ng-model="grade" name="grade" class="form-control" required ng-value="5"></input>
+  <input type="number" ng-model="worksheet.grade" name="grade" class="form-control" required ng-value="5"></input>
 </div>
 
-<div class="btn btn-default" ngf-select ng-model="files" ngf-multiple="true">Select file(s)</div>
+<div class="btn btn-default" ngf-select ng-model="worksheet.files" ngf-multiple="true">Select file(s)</div>
 <div ng-repeat="file in files">
   <p> {{file.name}} <button ng-click="delete_file(file)" class="btn"><span class="glyphicon glyphicon-remove"></span></button> </p>
 </div>
@@ -32,7 +32,7 @@
 
 <div class="form-group">
   <label for="description"> Description </label>
-  <input type="text" ng-model="description" name="description" class="form-control" value="">
+  <input type="text" ng-model="worksheet.description" name="description" class="form-control" value="">
 </div>
 
 <div class="actions">

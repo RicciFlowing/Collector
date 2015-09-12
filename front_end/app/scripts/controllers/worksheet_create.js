@@ -9,20 +9,25 @@
  */
 angular.module('collectorApp')
   .controller('WorksheetCreateCtrl', function ($scope,$location, Worksheet) {
+    $scope.worksheet = {};
+
+    var upload = function (files) {
+      /*
+      Upload.upload({
+        url: 'server/upload/url',
+        method: 'POST',
+        fields: { 'worksheet[name]': $scope.name },
+        file: files,
+        fileFormDataName: 'worksheet[file]'});
+        */
+   };
 
     $scope.submit = function(form){
       if(form.$invalid){
         return false;
       }
-      var worksheet = {
-                        topic: $scope.topic,
-                        file: $scope.files,
-                        category: $scope.category,
-                        description: $scope.description,
-                        grade: $scope.grade
-                        };
-      //$scope.upload();
-      console.log(worksheet);
+      //upload();
+      console.log($scope.worksheet);
       $location.path('/worksheets');
 
     };
