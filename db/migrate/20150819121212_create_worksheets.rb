@@ -1,8 +1,11 @@
 class CreateWorksheets < ActiveRecord::Migration
   def change
     create_table :worksheets do |t|
-      t.integer :klass
+      t.string :topic
+      t.integer :grade
       t.text :description
+      t.string :file
+      t.text :content
 
       t.timestamps null: false
     end

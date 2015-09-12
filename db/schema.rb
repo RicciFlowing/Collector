@@ -11,41 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827174858) do
+ActiveRecord::Schema.define(version: 20150824190932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "schoolsubject_id"
-  end
-
-  add_index "categories", ["schoolsubject_id"], name: "index_categories_on_schoolsubject_id", using: :btree
-
-  create_table "schoolsubjects", force: :cascade do |t|
-    t.string   "name"
+    t.string   "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "worksheets", force: :cascade do |t|
-    t.integer  "klass"
+    t.string   "topic"
+    t.integer  "grade"
     t.text     "description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
     t.string   "file"
     t.text     "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "category_id"
   end
 
   add_index "worksheets", ["category_id"], name: "index_worksheets_on_category_id", using: :btree
 
-  add_foreign_key "categories", "schoolsubjects"
 end
