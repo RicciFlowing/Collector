@@ -7,14 +7,6 @@ RSpec.describe WorksheetsController, type: :routing do
       expect(:get => "/worksheets").to route_to("worksheets#index")
     end
 
-    it "routes to #new" do
-      expect(:get => "/worksheets/new").to route_to("worksheets#new")
-    end
-
-    it "routes to #show" do
-      expect(:get => "/worksheets/1").to route_to("worksheets#show", :id => "1")
-    end
-
     it "routes to #edit" do
       expect(:get => "/worksheets/1/edit").to route_to("worksheets#edit", :id => "1")
     end

@@ -4,7 +4,6 @@ FactoryGirl.define do
    description "MyText"
    file "MyString"
    association :category, factory: :category
-   association :schoolsubject
   end
 
 end
