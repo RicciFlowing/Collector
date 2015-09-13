@@ -3,7 +3,6 @@ require 'yomu'
 class Worksheet < ActiveRecord::Base
   belongs_to :category
   validates_presence_of :category_id
-  validates_numericality_of :klass
 
   mount_uploader :file, FileUploader
 
