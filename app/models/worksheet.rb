@@ -6,10 +6,13 @@ class Worksheet < ActiveRecord::Base
 
   mount_uploader :file, FileUploader
 
-
-  def set_content
+  def read_text_from_file
     data = File.read self.file.path
     text = Yomu.read :text, data
+  end
+
+  def set_content
+    text = read_text_from_file
     text.gsub!(/\s\s+/, ' ')
     self.content = text
   end
