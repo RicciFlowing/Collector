@@ -35,4 +35,8 @@ angular.module('collectorApp')
     }
   }, true);
 
+  $scope.$watch('worksheets', function(newValue,oldValue){
+    $scope.filtered_worksheets =  $filter("worksheetFilter")($scope.worksheets, $scope.filter_criteria);
+  }, true);
+
 });
