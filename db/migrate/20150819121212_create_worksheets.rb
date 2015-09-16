@@ -4,7 +4,7 @@ class CreateWorksheets < ActiveRecord::Migration
       t.string :topic
       t.integer :grade
       t.text :description
-      t.string :file
+      t.string :files
       t.text :content
 
       t.timestamps null: false

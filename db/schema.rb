@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150824190932) do
     t.string   "topic"
     t.integer  "grade"
     t.text     "description"
-    t.string   "file"
+    t.string   "files"
     t.text     "content"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

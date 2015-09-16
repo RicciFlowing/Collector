@@ -16,7 +16,7 @@ class WorksheetsController < ApplicationController
 
   private
     def worksheet_params
-      params.require(:worksheet).permit(:topic, :grade, :description, :file, :category_id);
+      params.require(:worksheet).permit(:topic, :grade, :description, :files, :category_id);
     end
 
 
