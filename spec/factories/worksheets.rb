@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :worksheet do
-   grade 1
+   grade 5
    topic "A topic"
    description "A not so long description"
    files { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'files', 'test.odt')) }

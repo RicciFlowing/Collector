@@ -3,6 +3,7 @@ require 'yomu'
 class Worksheet < ActiveRecord::Base
   belongs_to :category
   validates_presence_of :category_id, :topic, :grade
+  validates_inclusion_of :grade, :in => 5..13
 
   mount_uploader :files, FileUploader
 
