@@ -14,8 +14,8 @@
 
 <div class="form-group">
   <label for="category"> Category</label>
-  <select class="form-control" name="category" ng-model="worksheet.category" required>
-    <option ng-repeat="category in categories | filter:{subject: subject}" value={{category}}> {{category.name}}</option>
+  <select class="form-control" name="category" ng-model="worksheet.category_id" required>
+    <option ng-repeat="category in categories | filter:{subject: subject}" value={{category.id}}> {{category.name}}</option>
   </select>
 </div>
 

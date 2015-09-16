@@ -4,7 +4,7 @@ angular.module('collectorApp').directive('worksheetForm', function(){
     templateUrl: 'views/worksheets/form.html',
     controller: function($scope){
       $scope.subjects = ["Math", "Science"]
-      $scope.categories = [{name: "Algebra",subject: "Math" }, {name: "Mechanics",subject: "Science"} ];
+      $scope.categories = [{id: 1, name: "Algebra",subject: "Math" }, {id: 2, name: "Mechanics",subject: "Science"} ];
 
       $scope.delete_file = function(file){
         var index = $scope.files.indexOf(file);
