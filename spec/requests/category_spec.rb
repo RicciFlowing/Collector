@@ -14,14 +14,14 @@ RSpec.describe "Category", type: :request do
 
       parsed_body = JSON.parse(response.body)
 
-      expect(parsed_body['categories']).not_to be_empty
+      expect(parsed_body).not_to be_empty
     end
 
     it "return a list of categories with the properties id, name, subject" do
       get categories_path
       parsed_body = JSON.parse(response.body)
 
-      expect(parsed_body['categories'].first).to include('id','name', 'subject' )
+      expect(parsed_body.first).to include('id','name', 'subject' )
     end
   end
 
