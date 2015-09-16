@@ -1,10 +1,10 @@
 'use strict';
 angular.module('collectorApp')
   .factory('Worksheet', function WorksheetFactory($resource) {
-    //return $resource('http://localhost:3000/worksheets.json/:id',{},{});
+    return $resource('http://localhost:3000/worksheets/:id',{},{});
     //Custom Fixtures going to be replaced by rails backend
 
-    var worksheets = [
+    /*var worksheets = [
       {
         id: 1,
         topic: "A important topic",
@@ -47,5 +47,5 @@ angular.module('collectorApp')
       query: function(){
         return worksheets;
       },
-    }
+    }*/
   });

@@ -1,8 +1,8 @@
 class WorksheetsController < ApplicationController
-
+  allow_cors :index, :create
   def index
     @worksheets = Worksheet.all
-    render json: @worksheets, status: 200
+    render  json: @worksheets, root: false, status: 200
   end
 
   def create
@@ -18,4 +18,6 @@ class WorksheetsController < ApplicationController
     def worksheet_params
       params.require(:worksheet).permit(:topic, :grade, :description, :file, :category_id);
     end
+
+
 end

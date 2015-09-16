@@ -9,7 +9,7 @@
  */
 angular.module('collectorApp')
   .controller('WorksheetCreateCtrl', function ($scope,$location, Worksheet) {
-    $scope.worksheet = {};
+    $scope.worksheet = new Worksheet();
 
     var upload = function (files) {
       /*
@@ -27,6 +27,7 @@ angular.module('collectorApp')
         return false;
       }
       //upload();
+      $scope.worksheet.$save();
       console.log($scope.worksheet);
       $location.path('/worksheets');
 

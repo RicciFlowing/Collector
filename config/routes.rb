@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  get 'cors/preflight'
+
   resources :categories, only: [:index]
 
   resources :worksheets do
     collection do
-    get 'search'
+      get 'search'
+    end
   end
-  end
+
+  match '*path' => 'cors#preflight', :via => :options
+
+
   root 'worksheets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
