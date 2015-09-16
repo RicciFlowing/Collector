@@ -4,6 +4,10 @@ RSpec.describe WorksheetsController, type: :controller do
   category =  FactoryGirl.create(:category)
   let(:valid_attributes){ FactoryGirl.attributes_for(:worksheet).merge({category_id: category.id}) }
 
+  it "creates a new Worksheet" do
+    get :index
+    expect(assigns(@worksheets))
+  end
 
   it "creates a new Worksheet" do
     expect {

@@ -2,12 +2,12 @@ require 'yomu'
 
 class Worksheet < ActiveRecord::Base
   belongs_to :category
-  validates_presence_of :category_id
+  validates_presence_of :category_id, :topic, :grade
 
-  mount_uploader :file, FileUploader
+  mount_uploader :files, FileUploader
 
   def read_text_from_file
-    data = File.read self.file.path
+    data = File.read self.files.path
     text = Yomu.read :text, data
   end
 
