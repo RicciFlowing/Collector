@@ -10,7 +10,7 @@
 angular.module('collectorApp')
 .controller('WorksheetIndexCtrl', function ($scope,$filter, Worksheet) {
   var worksheet_min_count = 2;
-
+  $scope.server = 'http://localhost:3000'
   $scope.worksheets = Worksheet.query();
   $scope.filter_criteria = {categories: [], tags:[], grades: "5;12"};
 

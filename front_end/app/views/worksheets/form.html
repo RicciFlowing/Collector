@@ -24,7 +24,7 @@
   <input type="number" ng-model="worksheet.grade" name="grade" class="form-control" required ng-value="5"></input>
 </div>
 
-<div class="btn btn-default" ngf-select ng-model="worksheet.files" ngf-multiple="true">Select file(s)</div>
+<div class="btn btn-default" ngf-select ng-model="files" ngf-multiple="true">Select file(s)</div>
 <div ng-repeat="file in files">
   <p> {{file.name}} <button ng-click="delete_file(file)" class="btn"><span class="glyphicon glyphicon-remove"></span></button> </p>
 </div>

@@ -1,5 +1,4 @@
 class WorksheetsController < ApplicationController
-  allow_cors :index, :create
   def index
     @worksheets = Worksheet.all
     render  json: @worksheets, root: false, status: 200
