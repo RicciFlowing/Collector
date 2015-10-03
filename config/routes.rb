@@ -9,9 +9,6 @@ Rails.application.routes.draw do
     end
   end
 
-  match '*path' => 'cors#preflight', :via => :options
-
-
   root 'worksheets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

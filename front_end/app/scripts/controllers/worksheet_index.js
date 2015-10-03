@@ -20,6 +20,7 @@ angular.module('collectorApp')
     if(index >=0){
       $scope.worksheets.splice(index, 1);
     }
+    worksheet.$delete({id: worksheet.id});
   };
 
   $scope.full_content_search = function(){
