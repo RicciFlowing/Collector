@@ -2,6 +2,7 @@ require 'yomu'
 
 class Worksheet < ActiveRecord::Base
   belongs_to :category
+  has_many :attachment
   validates_presence_of :category_id, :topic, :grade
   validates_inclusion_of :grade, :in => 5..13
 

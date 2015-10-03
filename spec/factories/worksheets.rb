@@ -3,8 +3,8 @@ FactoryGirl.define do
    grade 5
    topic "A topic"
    description "A not so long description"
-   files { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'files', 'test.odt')) }
    association :category, factory: :category
+   association :attachment, factory: :attachment
   end
 
 end

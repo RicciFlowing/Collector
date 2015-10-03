@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :attachments
+
   get 'cors/preflight'
 
   resources :categories, only: [:index]

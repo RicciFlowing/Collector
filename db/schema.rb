@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824190932) do
+ActiveRecord::Schema.define(version: 20151003142958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "file"
+    t.integer  "worksheet_id"
+  end
+
+  add_index "attachments", ["worksheet_id"], name: "index_attachments_on_worksheet_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -27,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150824190932) do
     t.string   "topic"
     t.integer  "grade"
     t.text     "description"
-    t.string   "files"
     t.text     "content"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -36,4 +44,5 @@ ActiveRecord::Schema.define(version: 20150824190932) do
 
   add_index "worksheets", ["category_id"], name: "index_worksheets_on_category_id", using: :btree
 
+  add_foreign_key "attachments", "worksheets"
 end
