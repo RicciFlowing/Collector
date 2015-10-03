@@ -4,7 +4,7 @@ FactoryGirl.define do
    topic "A topic"
    description "A not so long description"
    association :category, factory: :category
-   association :attachment, factory: :attachment
+   #association :attachment, factory: :attachment
   end
 
 end

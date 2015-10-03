@@ -4,7 +4,7 @@ RSpec.describe WorksheetsController, type: :controller do
   category =  FactoryGirl.create(:category)
   let(:valid_attributes){ FactoryGirl.attributes_for(:worksheet).merge({category_id: category.id}) }
 
-  it "creates a new Worksheet" do
+  it "list the Worksheets" do
     get :index
     expect(assigns(@worksheets))
   end
@@ -16,8 +16,9 @@ RSpec.describe WorksheetsController, type: :controller do
   end
 
   it "deletes a Worksheet" do
+    worksheet = FactoryGirl.create(:worksheet)
     expect {
-      post :destroy, {:id => Worksheet.first.id}
+      post :destroy, {:id => worksheet.id}
     }.to change(Worksheet, :count).by(-1)
   end
 
