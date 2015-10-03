@@ -23,7 +23,7 @@ RSpec.describe "Worksheets", type: :request do
       get worksheets_path
       parsed_body = JSON.parse(response.body)
 
-      expect(parsed_body.first).to include('id', 'grade','topic', 'files', 'category' )
+      expect(parsed_body.first).to include('id', 'grade','topic', 'category', 'url' )
     end
   end
 
@@ -32,7 +32,14 @@ RSpec.describe "Worksheets", type: :request do
       post worksheets_path, {:worksheet =>valid_attributes }
       expect(response).to have_http_status(200)
     end
+  end
 
+  describe "DELETE deletes /worksheets/:id" do
+    it "deletes a of worksheets" do
+      worksheet = FactoryGirl.create(:worksheet)
+      delete worksheet_path(worksheet)
+      expect(response).to have_http_status(204)
+    end
   end
 
 

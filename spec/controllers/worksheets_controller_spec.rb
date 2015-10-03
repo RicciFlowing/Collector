@@ -14,4 +14,11 @@ RSpec.describe WorksheetsController, type: :controller do
       post :create, {:worksheet => valid_attributes}
     }.to change(Worksheet, :count).by(1)
   end
+
+  it "deletes a Worksheet" do
+    expect {
+      post :destroy, {:id => Worksheet.first.id}
+    }.to change(Worksheet, :count).by(-1)
+  end
+
 end
