@@ -6,8 +6,9 @@
       <h3 class="heading">
         <b> {{worksheet.topic}}</b>
       </h3>
-
-    <a ng-href = "{{server + worksheet.url}}" class= "pull-right"> <i class= "fa fa-download"> </i> Download</a>
+<div ng-repeat = "attachment in worksheet.attachment">
+    <a ng-href = "{{server + attachment.url}}" class= "pull-right"> <i class= "fa fa-download"> </i> Download</a>
+</div>
 
   </div><!-- /HEAD PANEL -->
 

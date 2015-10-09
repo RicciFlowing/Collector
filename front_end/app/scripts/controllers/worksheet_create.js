@@ -11,17 +11,14 @@ angular.module('collectorApp')
   .controller('WorksheetCreateCtrl', function ($scope,$location, Worksheet, Upload) {
     $scope.worksheet = new Worksheet();
     $scope.files = [];
-    var upload = function (files) {
+    var upload = function (files, worksheet_id) {
             var file = $scope.files;
             return Upload.upload({
-                url: 'http://localhost:3000/worksheets/',
+                url: 'http://localhost:3000/attachments/',
                 method: 'POST',
-                fields: { 'worksheet[topic]': $scope.worksheet.topic,
-                          'worksheet[grade]': $scope.worksheet.grade,
-                          'worksheet[category_id]': $scope.worksheet.category_id,
-                        },
+                fields: { 'attachment[worksheet_id]': worksheet_id},
                 file: file,
-                fileFormDataName: 'worksheet[files]'
+                fileFormDataName: 'attachment[file]'
             });
         };
 
@@ -30,7 +27,14 @@ angular.module('collectorApp')
       if(form.$invalid){
         return false;
       }
-      upload($scope.files);
-      $location.path('/worksheets');
+      $scope.worksheet.$save()
+        .then(function(res)  {
+          alert(res.worksheet.id);
+          upload($scope.files, res.worksheet.id);
+          $location.path('/worksheets');
+        })
+        .catch(function(req) { alert("error saving obj"); });
+
+
     };
   });

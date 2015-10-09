@@ -1,0 +1,5 @@
+<div class="btn btn-default" ngf-select ng-model="files" ngf-multiple="true">Select file(s)</div>
+<div ng-repeat="file in files">
+  <p> {{file.name}} </p>
+  <button ng-click="delete_file(file)" class="btn"><span class="glyphicon glyphicon-remove"></span></button>
+</div>
