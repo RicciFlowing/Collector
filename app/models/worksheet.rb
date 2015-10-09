@@ -6,20 +6,19 @@ class Worksheet < ActiveRecord::Base
   validates_presence_of :category_id, :topic, :grade
   validates_inclusion_of :grade, :in => 5..13
 
-  mount_uploader :files, FileUploader
-
-  def read_text_from_file
-    data = File.read self.files.path
-    text = Yomu.read :text, data
-  end
+  include PgSearch
 
   def set_content
-    text = read_text_from_file
-    text.gsub!(/\s\s+/, ' ')
-    self.content = text
+    content = ""
+    self.attachment.each do |attachment|
+      content += attachment.get_content
+    end
+    self.content = content
   end
 
-  include PgSearch
+  def add_content(text)
+    self.content += text
+  end
 
   pg_search_scope(
     :search,

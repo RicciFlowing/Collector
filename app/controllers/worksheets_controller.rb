@@ -8,6 +8,7 @@ class WorksheetsController < ApplicationController
 
   def create
     @worksheet = Worksheet.new(worksheet_params);
+    @worksheet.set_content
     if @worksheet.save
       render json: @worksheets, status: 200
     else
@@ -17,7 +18,7 @@ class WorksheetsController < ApplicationController
 
   def destroy
     @worksheet.destroy
-    head :no_content 
+    head :no_content
   end
 
   private

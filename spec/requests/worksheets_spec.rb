@@ -19,11 +19,11 @@ RSpec.describe "Worksheets", type: :request do
       expect(parsed_body).not_to be_empty
     end
 
-    it "return a list of worksheets with the properties id, topic, grade, description, files, category" do
+    it "return a list of worksheets with the properties id, topic, grade, description, category" do
       get worksheets_path
       parsed_body = JSON.parse(response.body)
 
-      expect(parsed_body.first).to include('id', 'grade','topic', 'category', 'url' )
+      expect(parsed_body.first).to include('id', 'grade','topic', 'category' )
     end
   end
 

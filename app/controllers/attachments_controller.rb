@@ -3,9 +3,10 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = Attachment.new(attachment_params);
     if @attachment.save
-      render json: @attachment, status: 200
+      @attachment.send_content
+      head :no_content
     else
-      render status: 400
+      render status: 400, json: nil
     end
   end
 

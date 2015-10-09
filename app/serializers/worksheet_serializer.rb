@@ -1,8 +1,5 @@
 class WorksheetSerializer < ActiveModel::Serializer
-  attributes :id, :description, :grade, :topic, :url
-  def url
-    ## HACK
-    object.files.url
-  end
+  attributes :id, :description, :grade, :topic
+
   has_one :category
 end
