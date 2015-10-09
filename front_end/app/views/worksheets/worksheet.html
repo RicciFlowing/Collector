@@ -7,7 +7,7 @@
         <b> {{worksheet.topic}}</b>
       </h3>
 <div ng-repeat = "attachment in worksheet.attachment">
-    <a ng-href = "{{server + attachment.url}}" class= "pull-right"> <i class= "fa fa-download"> </i> Download</a>
+    <a ng-href = "{{attachment.url}}" class= "pull-right"> <i class= "fa fa-download"> </i> Download</a>
 </div>
 
   </div><!-- /HEAD PANEL -->
