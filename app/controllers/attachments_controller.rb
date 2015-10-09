@@ -1,5 +1,5 @@
 class AttachmentsController < ApplicationController
-  before_action :set_attachment, only: :destroy
+  before_action :set_attachment, only: [:destroy, :download]
   def create
     @attachment = Attachment.new(attachment_params);
     if @attachment.save
@@ -15,9 +15,14 @@ class AttachmentsController < ApplicationController
     head :no_content
   end
 
+  def download
+    send_file @attachment.file.path
+  end
+
+
   private
     def attachment_params
-      params.require(:attachment).permit(:topic, :grade, :description, :files, :category_id);
+      params.require(:attachment).permit(:worksheet_id, :file);
     end
 
     def set_attachment

@@ -10,9 +10,9 @@ class WorksheetsController < ApplicationController
     @worksheet = Worksheet.new(worksheet_params);
     @worksheet.set_content
     if @worksheet.save
-      render json: @worksheets, status: 200
+      render json: @worksheet, status: 200
     else
-      render json: @worksheets, status: 400
+      render json: "Error", status: 400
     end
   end
 

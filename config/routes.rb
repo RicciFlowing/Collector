@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :attachments
+  resources :attachments, only: [:create, :destroy] do
+    member do
+      get 'download'
+    end
+  end
 
   get 'cors/preflight'
 
