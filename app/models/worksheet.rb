@@ -14,10 +14,12 @@ class Worksheet < ActiveRecord::Base
       content += attachment.get_content
     end
     self.content = content
+    self.save
   end
 
   def add_content(text)
-    self.content += text
+    self.content = self.content + text
+    self.save
   end
 
   pg_search_scope(

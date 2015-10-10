@@ -17,6 +17,7 @@ class AttachmentsController < ApplicationController
 
   def download
     send_file @attachment.file.path
+    head :no_content
   end
 
 

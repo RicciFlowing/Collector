@@ -5,11 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'cors/preflight'
-
   resources :categories, only: [:index]
 
-  resources :worksheets do
+  resources :worksheets, only: [:index, :create, :destroy] do
     collection do
       get 'search'
     end

@@ -29,7 +29,7 @@ RSpec.describe "Worksheets", type: :request do
 
   describe "POST /worksheets" do
     it "creates a of worksheets" do
-      post worksheets_path, {:worksheet =>valid_attributes }
+      post '/worksheets', {:worksheet =>valid_attributes }
       expect(response).to have_http_status(200)
     end
   end
